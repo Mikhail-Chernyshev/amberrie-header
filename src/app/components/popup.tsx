@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './popup.module.css';
+import styles from '../popup.module.css';
 import PopupSmall from './popupSmall';
 import { MouseEvent, ReactElement } from 'react';
 import Head from 'next/head';
@@ -91,7 +91,12 @@ export default function Popup({
                 <div className={styles.popup__itemArrow}>
                   {hovered.active === true &&
                     hovered.number === element.key && (
-                      <PopupSmall items={itemsSmallPopup} withArrow={false} screenWidth={screenWidth} thirdLevel={false} />
+                      <PopupSmall
+                        items={itemsSmallPopup}
+                        withArrow={false}
+                        screenWidth={screenWidth}
+                        thirdLevel={false}
+                      />
                     )}
                 </div>
               )}

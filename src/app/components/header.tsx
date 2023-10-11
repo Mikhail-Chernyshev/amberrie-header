@@ -1,5 +1,5 @@
 'use client';
-import styles from './header.module.scss';
+import styles from '../header.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import Popup from './popup';
 import PopupSmall from './popupSmall';
@@ -22,14 +22,14 @@ export default function Header() {
   const [hovered, setHovered] = useState({ active: false, number: 0 });
   const [isFocusOnInput, setisFocusOnInput] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [screenWidth, setScreenWidth] = useState(window?.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(1100);
   const [inputValue, setinputValue] = useState('');
   const [isSearchMobile, setisSearchMobile] = useState(false);
   const [isOpenBurger, setisOpenBurger] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setScreenWidth(window.innerWidth);
+      setScreenWidth(window?.innerWidth);
     };
     window.addEventListener('resize', handleResize);
     return () => {

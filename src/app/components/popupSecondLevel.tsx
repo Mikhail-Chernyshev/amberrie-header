@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './popupSecondLevel.module.css';
+import styles from '../popupSecondLevel.module.css';
 import PopupSmall from './popupSmall';
 import { MouseEvent, ReactElement } from 'react';
 import Head from 'next/head';

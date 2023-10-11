@@ -1,7 +1,4 @@
-import Image from 'next/image';
-import styles from './page.module.css';
-import { useState } from 'react';
-import Header from './header';
+import Header from './components/header';
 import 'typeface-roboto';
 import Head from 'next/head';
 

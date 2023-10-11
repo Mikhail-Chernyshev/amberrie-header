@@ -1,5 +1,5 @@
 import React, { MouseEvent, useState } from 'react';
-import styles from './burgerMenu.module.css';
+import styles from '../burgerMenu.module.css';
 interface ElementProps {
   key: number;
   name: string;
