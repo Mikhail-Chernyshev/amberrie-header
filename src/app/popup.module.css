@@ -1,0 +1,94 @@
+.popupContainer {
+  width: 173px;
+  height: auto;
+  padding: 12px 0 12px 12px;
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 55px;
+  left: -10.5px;
+  z-index: 10;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.popup__title {
+  height: 34px;
+  margin: 0 0 0 7px;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(255, 92, 0, 1);
+}
+.popup__item {
+  height: 34px;
+  display: flex;
+}
+.popup__item:hover {
+  border: 1px solid #ffc3a0;
+  width: 173px;
+  border-radius: 8px;
+  background-color: rgba(255, 195, 160, 0.2);
+}
+.popup__item:hover > .popup__itemWrapper > .popup__itemName {
+  color: #ff5c00;
+}
+
+.popup__itemIcon {
+  height: 28px;
+  width: 28px;
+  margin: 3px 4px 3px 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.popup__itemName {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  color: #252525;
+}
+.popup__item:nth-of-type(1) > .popup__itemIcon {
+  background-image: url('../../public/heartIcon.svg');
+}
+.popup__item:nth-of-type(1):hover > .popup__itemIcon {
+  background-image: url('../../public/heartIconActive.svg');
+}
+.popup__item:nth-of-type(2) > .popup__itemIcon {
+  background-image: url('../../public/voicesIcon.svg');
+}
+.popup__item:nth-of-type(3) > .popup__itemIcon {
+  background-image: url('../../public/membersIcon.svg');
+}
+.popup__item:nth-of-type(4) > .popup__itemIcon {
+  background-image: url('../../public/viewsIcon.svg');
+}
+.popup__item:nth-of-type(4):hover > .popup__itemIcon {
+  background-image: url('../../public/viewsOrangeIcon.svg');
+}
+.popup__item:nth-of-type(5) > .popup__itemIcon {
+  background-image: url('../../public/repostsIcon.svg');
+}
+.popup__item:hover > .popup__itemWrapper > .popup__itemArrow {
+  background-image: url('../../public/arrowRightOrangeIcon.svg');
+  background-repeat: no-repeat;
+}
+.popup__itemArrow {
+  width: 12px;
+  height: 12px;
+  background-image: url('../../public/ArrowRightIcon.svg');
+  align-self: center;
+  margin-right: 17px;
+}
+.popup__itemWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+}

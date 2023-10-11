@@ -1,0 +1,334 @@
+.burgerMenu__wrapper {
+  display: flex;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: -56px;
+  right: 0;
+  /* bottom: 0; */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+}
+.burgerMenu__wrapperOpened {
+  display: flex;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: -56px;
+  right: 0;
+  /* bottom: 0; */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  visibility: visible;
+  opacity: 1;
+}
+.burgerMenu__content {
+  margin: 0 auto;
+  /* padding: 22px; */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+  background-color: #ffffff;
+  width: 344px;
+  z-index: 12;
+  height: auto;
+}
+.burgerMenu__header {
+  display: flex;
+  width: 300px;
+  margin: 18px auto 19px;
+  justify-content: space-between;
+}
+.burgerMenu__close {
+  width: 17px;
+  height: 17px;
+  background-image: url('../../public/popupClose.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 13.5px 0 0 0;
+}
+.burgerMenu__cancelSearch {
+  width: 159px;
+  height: 34px;
+  border: 1px solid rgba(255, 92, 0, 1);
+  border-radius: 16px;
+  display: inline-block;
+  position: relative;
+  color: rgba(255, 92, 0, 1);
+  background-color: #ffffff;
+  padding-right: 20px;
+  text-align: right;
+  margin-top: 3px;
+  background-image: url('../../public/cancelSearchArrow.svg');
+  background-repeat: no-repeat;
+  background-position: 18px 11px;
+  visibility: hidden;
+}
+.burgerMenu__cancelSearchActive {
+  width: 159px;
+  height: 34px;
+  border: 1px solid rgba(255, 92, 0, 1);
+  border-radius: 16px;
+  display: inline-block;
+  position: relative;
+  color: rgba(255, 92, 0, 1);
+  background-color: #ffffff;
+  padding-right: 20px;
+  text-align: right;
+  margin-top: 3px;
+  background-image: url('../../public/cancelSearchArrow.svg');
+  background-repeat: no-repeat;
+  background-position: 18px 11px;
+  visibility: visible;
+}
+.burgerMenu__search {
+  width: 300px;
+  border-radius: 22px;
+  display: flex;
+  margin: 0 auto 19px;
+  height: 44px;
+  position: relative;
+  background: rgba(247, 248, 250, 1);
+}
+.burgerMenu__searchIcon {
+  width: 22px;
+  height: 36px;
+  margin: 4px 10px 0 16px;
+  background-image: url('../../public/searchIcon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.burgerMenu__input {
+  height: 16px;
+  width: 125px;
+  margin: auto 0;
+  background: rgba(247, 248, 250, 1);
+  border: none;
+}
+
+.burgerMenu__input {
+  outline: none;
+}
+
+.burgerMenu__searchResultsItemClose {
+  width: 14px;
+  height: 14px;
+  background-image: url('../../public/inputClose.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 15px;
+  visibility: hidden;
+}
+.burgerMenu__searchResultsItemCloseActive {
+  width: 14px;
+  height: 14px;
+  background-image: url('../../public/inputClose.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 15px;
+  visibility: visible;
+}
+.burgerMenu__submit {
+  width: 75px;
+  height: 36px;
+  border: none;
+  background-color: (240, 241, 242, 1);
+  border-radius: 20px;
+  margin: 4px 4px 4px 0;
+  font-family: 'Roboto';
+}
+.burgerMenu__submitActive {
+  width: 75px;
+  height: 36px;
+  border: none;
+  background: rgba(255, 92, 0, 1);
+  border-radius: 20px;
+  color: #ffffff;
+  margin: 4px 4px 4px 0;
+  font-family: 'Roboto';
+}
+.burgerMenu__nav {
+  height: 53px;
+  width: 300px;
+  margin: 0 auto 27px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  color: rgba(63, 63, 63, 1);
+  font-family: 'Roboto';
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+.burgerMenu__navFirstLine {
+  justify-content: space-between;
+  display: flex;
+  margin: 0 0 19px 0;
+}
+.burgerMenu__navSecondLine {
+  justify-content: space-between;
+  display: flex;
+}
+
+.burgerMenu__navItem {
+  margin: 0;
+}
+.burgerMenu__items {
+  width: 300px;
+  margin: 0 auto 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: auto;
+}
+.burgerMenu__itemContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+
+  background: rgba(247, 248, 250, 1);
+  height: auto;
+}
+.burgerMenu__item {
+  width: 300px;
+  height: 44px;
+  display: flex;
+}
+.burgerMenu__itemLogo {
+  width: 28px;
+  height: 28px;
+  background-image: url('../../public/vkIconForSearchResults.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 8px 3px 8px 13px;
+}
+.burgerMenu__itemWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 12px 8px 5px;
+  width: 238px;
+}
+.burgerMenu__itemName {
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+.burgerMenu__itemArrowDown {
+  width: 20px;
+  height: 20px;
+  background-image: url('../../public/menuItemArrowDorn.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  align-self: center;
+}
+.burgerMenu__itemArrowUp {
+  width: 20px;
+  height: 20px;
+  background-image: url('../../public/menuItemArrowUp.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  align-self: center;
+}
+.burgerMenu__listOptions {
+  width: 331px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid black;
+  display: none;
+}
+.burgerMenu__listOptionsOpened {
+  width: 331px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 25px;
+}
+.burgerMenu__option {
+  width: 331px;
+  height: auto;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 49px;
+  box-shadow: 4px 6px 18px 0px rgba(75, 61, 69, 0.2);
+}
+.burgerMenu__optionIcon {
+  width: 28px;
+  height: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../../public/vkIconCircle.svg');
+  display: flex;
+  align-self: center;
+  margin: 10.5px 4px 10.5px 12px;
+}
+.burgerMenu__optionText {
+  display: flex;
+  flex-direction: column;
+  width: 251px;
+  height: 41px;
+  margin: 4px 4px 4px 0;
+}
+.burgerMenu__optionName {
+  color: #252525;
+  margin: 0 0 3px 0;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.burgerMenu__optionPrice {
+  display: inline-block;
+  font-family: 'Roboto';
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+.burgerMenu__optionPriceDothSpan {
+  display: inline-block;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 16.5px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+.burgerMenu__optionPriceSpan {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.burgerMenu__optionIconClose {
+  width: 20px;
+  height: 20px;
+  background-image: url('../../public/optionItemArrowLeft.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  align-self: center;
+}
