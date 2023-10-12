@@ -4,7 +4,7 @@
   padding: 17px 0 12px 12px;
   background-color: rgba(255, 255, 255, 1);
   position: absolute;
-  top: -29.5px;
+  top: -28.5px;
   left: 18px;
   z-index: 10;
   border-radius: 12px;
@@ -25,29 +25,48 @@
   color: rgba(255, 92, 0, 1);
 }
 .popupSecondLevel__item {
-  height: 34px;
+  height: 32px;
   display: flex;
+  border: 1px solid #ffffff;
 }
 .popupSecondLevel__itemSecondLevel {
-  height: 34px;
+  height: 32px;
+  border: 1px solid #ffffff;
   display: flex;
 }
-.popupSecondLevel__itemSecondLevel:hover:first-child {
+.popupSecondLevel__itemSecondLevel:hover:nth-child(1) {
   border: 1px solid #ffc3a0;
   width: 169px;
-  height: 34px;
+  height: 32px;
   margin-left: -12.5px;
-  padding-left: 12.5px;
+  padding-left: 13.5px;
   border-radius: 0px 8px 8px 0;
   background-color: rgba(255, 195, 160, 0.2);
   border-left: none;
 }
+.popupSecondLevel__itemSecondLevel:hover:nth-child(4) {
+  border: 1px solid #ffc3a0;
+  width: 169px;
+  height: 32px;
+  margin-left: 0;
+  /* margin-left: -12.5px; */
+  /* padding-left: 1.5px; */
+  padding-left: -5px;
+  margin-left: 1px;
+  background-color: rgba(255, 195, 160, 0.2);
+  border-left: none;
+}
+.popupSecondLevel__itemSecondLevel:hover:nth-child(4)
+  > .popupSecondLevel__itemWrapper
+  > .popupSecondLevel__itemArrow {
+  /* margin-left: 30px; */
+}
 .popupSecondLevel__itemSecondLevel:hover {
   border: 1px solid #ffc3a0;
-  width: 173px;
+  width: 161px;
   border-radius: 8px;
   background-color: rgba(255, 195, 160, 0.2);
-  border-radius: 0 8px 8px 0;
+  /* border-radius: 0 8px 8px 0; */
 }
 .popupSecondLevel__item:hover {
   border: 1px solid #ffc3a0;
@@ -117,13 +136,14 @@
   > .popupSecondLevel__itemArrow {
   background-image: url('../../public/arrowRightOrangeIcon.svg');
   background-repeat: no-repeat;
+  margin-right: 10px;
 }
 .popupSecondLevel__itemArrow {
   width: 12px;
   height: 12px;
   background-image: url('../../public/ArrowRightIcon.svg');
   align-self: center;
-  margin-right: 17px;
+  margin-right: 11.5px;
 }
 .popupSecondLevel__itemWrapper {
   display: flex;

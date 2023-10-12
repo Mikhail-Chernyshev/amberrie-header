@@ -185,7 +185,61 @@ export default function BurgerMenu({
           >
             Найти
           </button>
+          {isFocusOnInput && (
+            <div className={styles.burgerMenu__itemsSearchSrapper}>
+              {itemsForSearch.map((el, index) => (
+                <div
+                  key={index}
+                  className={styles.burgerMenu__searchResultsItem}
+                >
+                  <div
+                    className={styles.burgerMenu__searchResultsItemIcon}
+                    // style={{
+                    //   backgroundImage: `url(${el.logo})`,
+                    //   width: 28,
+                    //   height: 28,
+                    // }}
+                  ></div>
+                  <div className={styles.burgerMenu__searchResultsItemText}>
+                    <h3 className={styles.burgerMenu__searchResultsItemName}>
+                      {el.name}
+                    </h3>
+                    <p className={styles.burgerMenu__searchResultsItemPrice}>
+                      11,
+                      <p
+                        className={
+                          styles.burgerMenu__searchResultsItemPriceDothSpan
+                        }
+                      >
+                        30 -
+                      </p>
+                      14,
+                      <p
+                        className={
+                          styles.burgerMenu__searchResultsItemPriceDothSpan
+                        }
+                      >
+                        24
+                      </p>
+                      ₽
+                      <span
+                        className={
+                          styles.burgerMenu__searchResultsItemPriceSpan
+                        }
+                      >
+                        / 100 шт
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    className={styles.burgerMenu__searchResultsItemCloseIcon}
+                  ></div>
+                </div>
+              ))}
+            </div>
+          )}
         </form>
+
         <nav className={styles.burgerMenu__nav}>
           <div className={styles.burgerMenu__navFirstLine}>
             <li className={styles.burgerMenu__nevItem}>Акции</li>

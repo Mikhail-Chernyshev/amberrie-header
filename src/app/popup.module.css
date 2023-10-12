@@ -24,12 +24,13 @@
   color: rgba(255, 92, 0, 1);
 }
 .popup__item {
-  height: 34px;
+  height: 32px;
   display: flex;
+  border: 1px solid #ffffff;
 }
 .popup__item:hover {
   border: 1px solid #ffc3a0;
-  width: 173px;
+  width: 166px;
   border-radius: 8px;
   background-color: rgba(255, 195, 160, 0.2);
 }
@@ -78,6 +79,7 @@
 .popup__item:hover > .popup__itemWrapper > .popup__itemArrow {
   background-image: url('../../public/arrowRightOrangeIcon.svg');
   background-repeat: no-repeat;
+  margin-right: 12.5px;
 }
 .popup__itemArrow {
   width: 12px;

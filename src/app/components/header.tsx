@@ -254,11 +254,13 @@ export default function Header() {
               : styles.header__searchContainer
           }
           style={
-            openAllSocials && screenWidth > 800
+            openAllSocials && screenWidth > 1023
+              ? { height: 140, marginBottom: 0 }
+              : screenWidth < 1023 && screenWidth > 800 && openAllSocials
               ? { height: 210, marginBottom: 0 }
               : screenWidth < 800
               ? { height: 44 }
-              : screenWidth && openAllSocials
+              : screenWidth < 800 && openAllSocials
               ? { height: 44 }
               : { height: 70 }
           }
@@ -392,6 +394,7 @@ export default function Header() {
           {isFocusOnInput && screenWidth > 1023 ? (
             <button
               onMouseEnter={handleMouseEnterOnButtonAllSocials}
+              onMouseLeave={handleMouseEnterOffPopupAllSocials}
               onClick={handleClickOnAllIcons}
               className={
                 openAllSocials
@@ -417,6 +420,7 @@ export default function Header() {
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <button
                 onMouseEnter={handleMouseEnterOnButtonAllSocials}
+                onMouseLeave={handleMouseEnterOffPopupAllSocials}
                 onClick={handleClickOnAllIcons}
                 className={
                   openAllSocials
@@ -426,6 +430,7 @@ export default function Header() {
               >
                 {isPopupVisible && !openAllSocials && (
                   <div
+                  className={styles.header__popupSmallWrapper}
                     onMouseEnter={handleMouseEnterOnButtonAllSocials}
                     onMouseLeave={handleMouseEnterOffPopupAllSocials}
                   >
@@ -511,7 +516,23 @@ export default function Header() {
                       {el.name}
                     </h3>
                     <p className={styles.header__searchResultsItemPrice}>
-                      11,30 - 14,24 ₽
+                      11,
+                      <p
+                        className={
+                          styles.header__searchResultsItemPriceDothSpan
+                        }
+                      >
+                        30 -
+                      </p>
+                      14,
+                      <p
+                        className={
+                          styles.header__searchResultsItemPriceDothSpan
+                        }
+                      >
+                        24
+                      </p>
+                      ₽
                       <span
                         className={styles.header__searchResultsItemPriceSpan}
                       >
@@ -532,7 +553,7 @@ export default function Header() {
             className={styles.header__notifications}
             style={
               isSearchMobile && screenWidth < 800
-                ? { marginLeft: 18, width: 176 }
+                ? { marginLeft: 19, width: 176 }
                 : !isSearchMobile && screenWidth > 800
                 ? { marginLeft: 10.5 }
                 : { marginLeft: 25 }
@@ -552,7 +573,7 @@ export default function Header() {
               <div className={styles.header__notificationItemBellCount}>3</div>
             </div>
             <div className={styles.header__notificationItemCart}>
-              <div className={styles.header__notificationItemBellCount}>3</div>
+              <div className={styles.header__notificationItemBellCount}>33</div>
             </div>
             <div className={styles.header__notificationItemUser}></div>
           </div>
@@ -583,6 +604,7 @@ export default function Header() {
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <button
                 onMouseEnter={handleMouseEnterOnButtonAllSocials}
+                onMouseLeave={handleMouseEnterOffPopupAllSocials}
                 onClick={handleClickOnAllIcons}
                 className={
                   openAllSocials
