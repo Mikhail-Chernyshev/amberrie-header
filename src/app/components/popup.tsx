@@ -89,15 +89,15 @@ export default function Popup({
               )}
               {element.key === 4 && (
                 <div className={styles.popup__itemArrow}>
-                  {hovered.active === true &&
-                    hovered.number === element.key && (
+                  {/* {hovered.active === true && */}
+                    {/* hovered.number === element.key && ( */}
                       <PopupSmall
                         items={itemsSmallPopup}
                         withArrow={false}
                         screenWidth={screenWidth}
                         thirdLevel={false}
                       />
-                    )}
+                    {/* )} */}
                 </div>
               )}
             </div>

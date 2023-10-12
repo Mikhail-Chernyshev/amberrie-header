@@ -1,10 +1,10 @@
 .popupSecondLevelContainer {
   width: 173px;
   height: auto;
-  padding: 17px 0 12px 12px;
+  padding: 12px 0 12px 12px;
   background-color: rgba(255, 255, 255, 1);
   position: absolute;
-  top: -28.5px;
+  top: -23.5px;
   left: 18px;
   z-index: 10;
   border-radius: 12px;
@@ -90,6 +90,7 @@
   margin: 3px 4px 3px 4px;
   background-repeat: no-repeat;
   background-position: center;
+  background-image: url('../../public/voicesIcon.svg');
 }
 .popupSecondLevel__itemName {
   font-family: 'Roboto';
@@ -101,28 +102,33 @@
   margin: 0;
   color: #252525;
 }
-.popupSecondLevel__item:nth-of-type(1) > .popupSecondLevel__itemIcon {
+.popupSecondLevel__itemSecondLevel:nth-of-type(1)
+  > .popupSecondLevel__itemIcon {
   background-image: url('../../public/heartIcon.svg');
+  background-position: 2px 4px;
 }
-.popupSecondLevel__item:nth-of-type(1):hover > .popupSecondLevel__itemIcon {
-  background-image: url('../../public/heartIconActive.svg');
-}
-.popupSecondLevel__item:nth-of-type(2) > .popupSecondLevel__itemIcon {
+
+.popupSecondLevel__itemSecondLevel:nth-child(2) > .popupSecondLevel__itemIcon {
   background-image: url('../../public/voicesIcon.svg');
 }
-.popupSecondLevel__item:nth-of-type(3) > .popupSecondLevel__itemIcon {
+.popupSecondLevel__itemSecondLevel:nth-of-type(3)
+  > .popupSecondLevel__itemIcon {
   background-image: url('../../public/membersIcon.svg');
 }
-.popupSecondLevel__item:nth-of-type(4) > .popupSecondLevel__itemIcon {
+.popupSecondLevel__itemSecondLevel:nth-of-type(4)
+  > .popupSecondLevel__itemIcon {
   background-image: url('../../public/viewsIcon.svg');
 }
-.popupSecondLevel__item:nth-of-type(4):hover > .popupSecondLevel__itemIcon {
+.popupSecondLevel__itemSecondLevel:nth-of-type(4):hover
+  > .popupSecondLevel__itemIcon {
   background-image: url('../../public/viewsOrangeIcon.svg');
 }
-.popupSecondLevel__item:nth-of-type(5) > .popupSecondLevel__itemIcon {
+.popupSecondLevel__itemSecondLevel:nth-of-type(5)
+  > .popupSecondLevel__itemIcon {
   background-image: url('../../public/repostsIcon.svg');
 }
-.popupSecondLevel__item:nth-of-type(6) > .popupSecondLevel__itemIcon {
+.popupSecondLevel__itemSecondLevel:nth-of-type(6)
+  > .popupSecondLevel__itemIcon {
   background-image: url('../../public/commentsIcon.svg');
 }
 .popupSecondLevel__item:hover

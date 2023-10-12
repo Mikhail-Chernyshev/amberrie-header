@@ -285,13 +285,13 @@ export default function Header() {
                       className={styles.header__social}
                       key={element.key}
                     >
-                      {hovered.active === true &&
-                        hovered.number === element.key && (
+                      {/* {hovered.active === true && */}
+                        {/* hovered.number === element.key && ( */}
                           <Popup
                             screenWidth={screenWidth}
                             name={element.name}
                           />
-                        )}
+                        {/* )} */}
                       <div className={styles.header__socialIcon}></div>
                       <p className={styles.header__socialName}>
                         {element.name}

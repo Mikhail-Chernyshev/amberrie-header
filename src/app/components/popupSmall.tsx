@@ -33,32 +33,7 @@ export default function PopupSmall({
   const handleMouseLeave = () => {
     setHovered({ active: false, number: 0 });
   };
-  const itemsMenu: ElementProps[] = [
-    {
-      key: 1,
-      name: 'Лайки',
-    },
-    {
-      key: 2,
-      name: 'Голоса',
-    },
-    {
-      key: 3,
-      name: 'Подпосчики',
-    },
-    {
-      key: 4,
-      name: 'Просмотры',
-    },
-    {
-      key: 5,
-      name: 'Репосты',
-    },
-    {
-      key: 6,
-      name: 'Комментарии',
-    },
-  ];
+
   console.log(thirdLevel);
   return (
     <>
