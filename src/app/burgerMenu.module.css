@@ -134,6 +134,7 @@
   background-position: center;
   margin: 15px;
   visibility: visible;
+  z-index: 100;
 }
 .burgerMenu__submit {
   width: 75px;

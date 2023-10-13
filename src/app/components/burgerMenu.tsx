@@ -16,11 +16,21 @@ export default function BurgerMenu({
   open: boolean;
   handleOpenBurger: () => void;
 }) {
-  const [isFocusOnInput, setisFocusOnInput] = useState(false);
+  const [isFocusOnInput, setisFocusOnInput] = useState(true);
+  const [inputValue, setinputValue] = useState('');
   const [isOpenListOptions, setisOpenListOptions] = useState({
     active: false,
     number: 0,
   });
+  function handleChange(event: {
+    target: { value: React.SetStateAction<string> };
+  }) {
+    setinputValue(event.target.value);
+  }
+
+  function handleClearInput() {
+    setinputValue('');
+  }
   function handleFocus() {
     setisFocusOnInput(!isFocusOnInput);
   }
@@ -162,6 +172,7 @@ export default function BurgerMenu({
           <div className={styles.burgerMenu__searchIcon}></div>
           <input
             type='text'
+            onChange={handleChange}
             onFocus={handleFocus}
             onBlur={handleFocus}
             className={styles.burgerMenu__input}
@@ -172,6 +183,7 @@ export default function BurgerMenu({
                 ? styles.burgerMenu__searchResultsItemCloseActive
                 : styles.burgerMenu__searchResultsItemClose
             }
+            onClick={handleClearInput}
           ></div>
 
           <div></div>
