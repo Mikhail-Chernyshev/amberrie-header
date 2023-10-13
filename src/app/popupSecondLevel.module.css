@@ -44,18 +44,8 @@
   background-color: rgba(255, 195, 160, 0.2);
   border-left: none;
 }
-.popupSecondLevel__itemSecondLevel:hover:nth-child(4) {
-  border: 1px solid #ffc3a0;
-  width: 169px;
-  height: 32px;
-  margin-left: 0;
-  /* margin-left: -12.5px; */
-  /* padding-left: 1.5px; */
-  padding-left: -5px;
-  margin-left: 1px;
-  background-color: rgba(255, 195, 160, 0.2);
-  border-left: none;
-}
+
+
 .popupSecondLevel__itemSecondLevel:hover:nth-child(4)
   > .popupSecondLevel__itemWrapper
   > .popupSecondLevel__itemArrow {
@@ -63,7 +53,7 @@
 }
 .popupSecondLevel__itemSecondLevel:hover {
   border: 1px solid #ffc3a0;
-  width: 161px;
+  width: 169px;
   border-radius: 8px;
   background-color: rgba(255, 195, 160, 0.2);
   /* border-radius: 0 8px 8px 0; */
@@ -118,10 +108,11 @@
 .popupSecondLevel__itemSecondLevel:nth-of-type(4)
   > .popupSecondLevel__itemIcon {
   background-image: url('../../public/viewsIcon.svg');
+  
 }
 .popupSecondLevel__itemSecondLevel:nth-of-type(4):hover
   > .popupSecondLevel__itemIcon {
-  background-image: url('../../public/viewsOrangeIcon.svg');
+  /* background-image: url('../../public/viewsOrangeIcon.svg'); */
 }
 .popupSecondLevel__itemSecondLevel:nth-of-type(5)
   > .popupSecondLevel__itemIcon {

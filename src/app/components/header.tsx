@@ -22,20 +22,16 @@ export default function Header() {
   const [hovered, setHovered] = useState({ active: false, number: 0 });
   const [isFocusOnInput, setisFocusOnInput] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [screenWidth, setScreenWidth] = useState(1100);
-  const [inputValue, setinputValue] = useState('');
+  const [screenWidth, setScreenWidth] = useState(0);
+  const [inputValue, setinputValue] = useState('Лайки');
   const [isSearchMobile, setisSearchMobile] = useState(false);
   const [isOpenBurger, setisOpenBurger] = useState(false);
-
   useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window?.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    if (typeof window !== 'undefined') {
+      setScreenWidth(window.innerWidth);
+    }
   }, []);
+
   function handleOpenBurger() {
     setisOpenBurger(!isOpenBurger);
   }
@@ -43,6 +39,10 @@ export default function Header() {
     target: { value: React.SetStateAction<string> };
   }) {
     setinputValue(event.target.value);
+  }
+
+  function handleClearInput() {
+    setinputValue(' ');
   }
   function clickOnSearchMobile() {
     setisSearchMobile(!isSearchMobile);
@@ -59,6 +59,9 @@ export default function Header() {
   };
   const handleBlur = () => {
     setisFocusOnInput(false);
+    setisSearchMobile(false);
+    console.log('click');
+    console.log(isFocusOnInput);
   };
 
   const handleMouseEnter = (
@@ -227,7 +230,6 @@ export default function Header() {
       logo: '../../public/vkIconCircle.svg',
     },
   ];
-  console.log(inputValue);
   return (
     <>
       <Head>
@@ -308,13 +310,13 @@ export default function Header() {
                       className={styles.header__social}
                       key={element.key}
                     >
-                      {hovered.active === true &&
+                      {/* {hovered.active === true &&
                         hovered.number === element.key && (
                           <Popup
                             screenWidth={screenWidth}
                             name={element.name}
                           />
-                        )}
+                        )} */}
                       <div className={styles.header__socialIcon}></div>
                       <p
                         style={openAllSocials ? { visibility: 'visible' } : {}}
@@ -370,13 +372,13 @@ export default function Header() {
                         className={styles.header__social}
                         key={element.key}
                       >
-                        {hovered.active === true &&
+                        {/* {hovered.active === true &&
                           hovered.number === element.key && (
                             <Popup
                               screenWidth={screenWidth}
                               name={element.name}
                             />
-                          )}
+                          )} */}
                         <div className={styles.header__socialIcon}></div>
                         <p
                           className={styles.header__socialName}
@@ -430,7 +432,7 @@ export default function Header() {
               >
                 {isPopupVisible && !openAllSocials && (
                   <div
-                  className={styles.header__popupSmallWrapper}
+                    className={styles.header__popupSmallWrapper}
                     onMouseEnter={handleMouseEnterOnButtonAllSocials}
                     onMouseLeave={handleMouseEnterOffPopupAllSocials}
                   >
@@ -445,7 +447,15 @@ export default function Header() {
                   </div>
                 )}
               </button>
-              {openAllSocials && screenWidth > 1023 && (
+              {!openAllSocials && screenWidth > 1023 && (
+                <p
+                  className={styles.header__socialName}
+                  style={{ textAlign: 'left', paddingLeft: 5 }}
+                >
+                  Ещё...
+                </p>
+              )}
+              {openAllSocials && screenWidth > 800 && (
                 <p
                   className={styles.header__buttonHide}
                   style={{ visibility: 'visible' }}
@@ -458,6 +468,7 @@ export default function Header() {
             ''
           )}
           <form
+            onClick={handleFocus}
             action='1'
             className={
               isFocusOnInput
@@ -467,7 +478,7 @@ export default function Header() {
           >
             {screenWidth < 1023 && screenWidth > 800 ? (
               <div
-                onClick={handleFocus}
+                // onClick={handleFocus}
                 className={styles.header__searchIcon}
               ></div>
             ) : (
@@ -479,7 +490,6 @@ export default function Header() {
               className={styles.header__input}
               value={inputValue}
               onChange={handleChange}
-              onFocus={handleFocus}
               onBlur={handleBlur}
             ></input>
             {isFocusOnInput && inputValue === '' && (
@@ -490,7 +500,7 @@ export default function Header() {
 
             {screenWidth < 1023 && isFocusOnInput && (
               <div
-                onClick={handleBlur}
+                onClick={handleClearInput}
                 className={styles.header__inputIconClear}
               ></div>
             )}
@@ -503,14 +513,7 @@ export default function Header() {
             >
               {itemsForSearch.map((el, index) => (
                 <div key={index} className={styles.header__searchResultsItem}>
-                  <div
-                    className={styles.header__searchResultsItemIcon}
-                    // style={{
-                    //   backgroundImage: `url(${el.logo})`,
-                    //   width: 28,
-                    //   height: 28,
-                    // }}
-                  ></div>
+                  <div className={styles.header__searchResultsItemIcon}></div>
                   <div className={styles.header__searchResultsItemText}>
                     <h3 className={styles.header__searchResultsItemName}>
                       {el.name}
@@ -545,17 +548,25 @@ export default function Header() {
               ))}
             </div>
 
-            <button type='submit' className={styles.header__submit}>
+            <button type='button' className={styles.header__submit}>
               Найти
             </button>
           </form>
+          {isFocusOnInput && (
+            <div
+              onClick={handleBlur}
+              className={styles.header__searchOverlay}
+            ></div>
+          )}
           <div
             className={styles.header__notifications}
             style={
               isSearchMobile && screenWidth < 800
-                ? { marginLeft: 19, width: 176 }
-                : !isSearchMobile && screenWidth > 800
+                ? { marginLeft: 19, width: 174 }
+                : !isSearchMobile && screenWidth > 800 && !isFocusOnInput
                 ? { marginLeft: 10.5 }
+                : isFocusOnInput && screenWidth > 800 && screenWidth < 1024
+                ? { marginLeft: 0 }
                 : { marginLeft: 25 }
             }
           >
@@ -634,10 +645,16 @@ export default function Header() {
             ></input>
 
             {screenWidth < 1023 && isFocusOnInput && (
-              <div className={styles.header__inputIconClear}></div>
+              <div
+                onClick={handleClearInput}
+                className={styles.header__inputIconClear}
+              ></div>
             )}
             {screenWidth < 800 && isSearchMobile && (
-              <div className={styles.header__inputIconClear}></div>
+              <div
+                onClick={handleClearInput}
+                className={styles.header__inputIconClear}
+              ></div>
             )}
             <div
               className={
@@ -694,6 +711,12 @@ export default function Header() {
               Найти
             </button>
           </form>
+        )}
+        {isSearchMobile && (
+          <div
+            onClick={handleBlur}
+            className={styles.header__searchOverlayMobile}
+          ></div>
         )}
         {screenWidth < 800 && openAllSocials && (
           <div className={styles.header__iconsSecondLineTable}>

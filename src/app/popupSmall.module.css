@@ -21,7 +21,7 @@
   padding: 12px 0 12px 12px;
   background-color: rgba(255, 255, 255, 1);
   position: absolute;
-  top: -13.5px;
+  top: -12.5px;
   font-family: 'Roboto';
   left: 130px;
   z-index: 10;
@@ -67,7 +67,7 @@
   border: 1px solid #ffc3a0;
   height: 32px;
   width: 169px;
-  
+
   border-radius: 8px;
   background-color: rgba(255, 195, 160, 0.2);
 }
@@ -75,7 +75,7 @@
   border: 1px solid #ffc3a0;
   width: 169px;
   margin-left: -12.5px;
-  padding-left: 14.5px;
+  padding-left: 13.5px;
   border-radius: 0px 8px 8px 0;
   background-color: rgba(255, 195, 160, 0.2);
   border-left: none;
@@ -102,9 +102,7 @@
   > .popupSmall__itemArrow {
   background-image: url('../../public/arrowRightOrangeIcon.svg');
 }
-.popupSmallContainerArrowFull:hover
-  > .popupSmall__item_arrow
-  > .popupSmall__itemArrow {
+.popupSmall__item_arrow:hover > .popupSmall__itemArrow {
   background-image: url('../../public/arrowRightOrangeIcon.svg');
 }
 .popupSmall__itemName {
