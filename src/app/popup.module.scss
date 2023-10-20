@@ -28,6 +28,12 @@
   display: flex;
   border: 1px solid #ffffff;
 }
+.popup__popupSmallContainer {
+  display: none;
+}
+.popup__item:hover > .popup__itemWrapper > .popup__itemArrow > .popup__popupSmallContainer {
+  display: flex;
+}
 .popup__item:hover {
   border: 1px solid #ffc3a0;
   width: 166px;
@@ -37,7 +43,6 @@
 .popup__item:hover > .popup__itemWrapper > .popup__itemName {
   color: #ff5c00;
 }
-
 .popup__itemIcon {
   height: 28px;
   width: 28px;
@@ -58,7 +63,6 @@
 .popup__item:nth-of-type(1) > .popup__itemIcon {
   background-image: url('../../public/heartIcon.svg');
 }
-
 .popup__item:nth-of-type(2) > .popup__itemIcon {
   background-image: url('../../public/voicesIcon.svg');
 }

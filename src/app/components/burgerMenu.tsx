@@ -1,14 +1,114 @@
-import React, { MouseEvent, useState } from 'react';
-import styles from '../burgerMenu.module.css';
-interface ElementProps {
+import React, { useState } from 'react';
+import styles from '../burgerMenu.module.scss';
+import classNames from 'classnames';
+interface elementIcon {
   key: number;
   name: string;
 }
-interface ElementSearch {
+interface elementSearch {
   name: string;
   logo: string;
 }
-
+const elementsMenu: elementIcon[] = [
+  {
+    key: 1,
+    name: 'Вконт',
+  },
+  {
+    key: 2,
+    name: 'Вконт1',
+  },
+  {
+    key: 3,
+    name: 'Вконт2',
+  },
+  {
+    key: 4,
+    name: 'Вконт3',
+  },
+  {
+    key: 5,
+    name: 'Вконт4',
+  },
+  {
+    key: 6,
+    name: 'Вконт',
+  },
+  {
+    key: 7,
+    name: 'Вконт',
+  },
+  {
+    key: 8,
+    name: 'Вконт',
+  },
+  {
+    key: 9,
+    name: 'Вконт',
+  },
+  {
+    key: 10,
+    name: 'Вконт1',
+  },
+  {
+    key: 11,
+    name: 'Вконт2',
+  },
+  {
+    key: 12,
+    name: 'Вконт3',
+  },
+  {
+    key: 13,
+    name: 'Вконт4',
+  },
+  {
+    key: 14,
+    name: 'Вконт',
+  },
+  {
+    key: 15,
+    name: 'Вконт',
+  },
+  {
+    key: 16,
+    name: 'Вконт',
+  },
+];
+const itemsForSearch: elementSearch[] = [
+  {
+    name: 'Лайки',
+    logo: '../../public/vkIconForSearchResults.svg',
+  },
+  {
+    name: 'Лайки',
+    logo: '../../public/vkIconForSearchResults.svg',
+  },
+  {
+    name: 'Лайки',
+    logo: '../../public/vkIconForSearchResults.svg',
+  },
+  {
+    name: 'Лайки',
+    logo: '../../public/vkIconForSearchResults.svg',
+  },
+  {
+    name: 'Лайки',
+    logo: '../../public/vkIconForSearchResults.svg',
+  },
+  {
+    name: 'Лайки',
+    logo: '../../public/vkIconForSearchResults.svg',
+  },
+  {
+    name: 'Лайки',
+    logo: '../../public/vkIconForSearchResults.svg',
+  },
+  {
+    name: 'Лайки',
+    logo: '../../public/vkIconForSearchResults.svg',
+  },
+];
 export default function BurgerMenu({
   open,
   handleOpenBurger,
@@ -16,7 +116,6 @@ export default function BurgerMenu({
   open: boolean;
   handleOpenBurger: () => void;
 }) {
-  const [isFocusOnInput, setisFocusOnInput] = useState(true);
   const [inputValue, setinputValue] = useState('');
   const [isOpenListOptions, setisOpenListOptions] = useState({
     active: false,
@@ -27,18 +126,12 @@ export default function BurgerMenu({
   }) {
     setinputValue(event.target.value);
   }
-
   function handleClearInput() {
     setinputValue('');
   }
-  function handleFocus() {
-    setisFocusOnInput(!isFocusOnInput);
-  }
-  const handleOpenListOptions = (
-    event: MouseEvent<HTMLDivElement>,
-    elementProps: ElementProps
-  ) => {
-    const { key, name } = elementProps;
+
+  const handleOpenListOptions = (elementProps: elementIcon) => {
+    const { key } = elementProps;
     if (isOpenListOptions.active === true) {
       setisOpenListOptions({ active: false, number: 0 });
     } else {
@@ -46,111 +139,12 @@ export default function BurgerMenu({
     }
   };
 
-  const elementsMenu: ElementProps[] = [
-    {
-      key: 1,
-      name: 'Вконт',
-    },
-    {
-      key: 2,
-      name: 'Вконт1',
-    },
-    {
-      key: 3,
-      name: 'Вконт2',
-    },
-    {
-      key: 4,
-      name: 'Вконт3',
-    },
-    {
-      key: 5,
-      name: 'Вконт4',
-    },
-    {
-      key: 6,
-      name: 'Вконт',
-    },
-    {
-      key: 7,
-      name: 'Вконт',
-    },
-    {
-      key: 8,
-      name: 'Вконт',
-    },
-    {
-      key: 9,
-      name: 'Вконт',
-    },
-    {
-      key: 10,
-      name: 'Вконт1',
-    },
-    {
-      key: 11,
-      name: 'Вконт2',
-    },
-    {
-      key: 12,
-      name: 'Вконт3',
-    },
-    {
-      key: 13,
-      name: 'Вконт4',
-    },
-    {
-      key: 14,
-      name: 'Вконт',
-    },
-    {
-      key: 15,
-      name: 'Вконт',
-    },
-    {
-      key: 16,
-      name: 'Вконт',
-    },
-  ];
-  const itemsForSearch: ElementSearch[] = [
-    {
-      name: 'Лайки',
-      logo: '../../public/vkIconForSearchResults.svg',
-    },
-    {
-      name: 'Лайки',
-      logo: '../../public/vkIconForSearchResults.svg',
-    },
-    {
-      name: 'Лайки',
-      logo: '../../public/vkIconForSearchResults.svg',
-    },
-    {
-      name: 'Лайки',
-      logo: '../../public/vkIconForSearchResults.svg',
-    },
-    {
-      name: 'Лайки',
-      logo: '../../public/vkIconForSearchResults.svg',
-    },
-    {
-      name: 'Лайки',
-      logo: '../../public/vkIconForSearchResults.svg',
-    },
-    {
-      name: 'Лайки',
-      logo: '../../public/vkIconForSearchResults.svg',
-    },
-    {
-      name: 'Лайки',
-      logo: '../../public/vkIconForSearchResults.svg',
-    },
-  ];
   return (
     <div
-      className={
-        open ? styles.burgerMenu__wrapperOpened : styles.burgerMenu__wrapper
-      }
+      className={classNames({
+        [styles.burgerMenu__wrapperOpened]: open,
+        [styles.burgerMenu__wrapper]: !open,
+      })}
     >
       <div className={styles.burgerMenu__content}>
         <div className={styles.burgerMenu__header}>
@@ -158,98 +152,65 @@ export default function BurgerMenu({
             className={styles.burgerMenu__close}
             onClick={handleOpenBurger}
           ></div>
-          <button
-            className={
-              isFocusOnInput
-                ? styles.burgerMenu__cancelSearchActive
-                : styles.burgerMenu__cancelSearch
-            }
-          >
-            Отмена поиска
-          </button>
         </div>
         <form action='1' className={styles.burgerMenu__search}>
           <div className={styles.burgerMenu__searchIcon}></div>
           <input
             type='text'
             onChange={handleChange}
-            onFocus={handleFocus}
-            onBlur={handleFocus}
+            value={inputValue}
             className={styles.burgerMenu__input}
           ></input>
+          <button className={styles.burgerMenu__cancelSearch}>
+            Отмена поиска
+          </button>
           <div
-            className={
-              isFocusOnInput
-                ? styles.burgerMenu__searchResultsItemCloseActive
-                : styles.burgerMenu__searchResultsItemClose
-            }
+            className={styles.burgerMenu__searchResultsItemClose}
             onClick={handleClearInput}
           ></div>
 
-          <div></div>
-          <button
-            type='submit'
-            className={
-              isFocusOnInput
-                ? styles.burgerMenu__submitActive
-                : styles.burgerMenu__submit
-            }
-          >
+          <button type='submit' className={styles.burgerMenu__submit}>
             Найти
           </button>
-          {isFocusOnInput && (
-            <div className={styles.burgerMenu__itemsSearchSrapper}>
-              {itemsForSearch.map((el, index) => (
-                <div
-                  key={index}
-                  className={styles.burgerMenu__searchResultsItem}
-                >
-                  <div
-                    className={styles.burgerMenu__searchResultsItemIcon}
-                    // style={{
-                    //   backgroundImage: `url(${el.logo})`,
-                    //   width: 28,
-                    //   height: 28,
-                    // }}
-                  ></div>
-                  <div className={styles.burgerMenu__searchResultsItemText}>
-                    <h3 className={styles.burgerMenu__searchResultsItemName}>
-                      {el.name}
-                    </h3>
-                    <p className={styles.burgerMenu__searchResultsItemPrice}>
-                      11,
-                      <p
-                        className={
-                          styles.burgerMenu__searchResultsItemPriceDothSpan
-                        }
-                      >
-                        30 -
-                      </p>
-                      14,
-                      <p
-                        className={
-                          styles.burgerMenu__searchResultsItemPriceDothSpan
-                        }
-                      >
-                        24
-                      </p>
-                      ₽
-                      <span
-                        className={
-                          styles.burgerMenu__searchResultsItemPriceSpan
-                        }
-                      >
-                        / 100 шт
-                      </span>
+          <div className={styles.burgerMenu__itemsSearchWrapper}>
+            {itemsForSearch.map((el, index) => (
+              <div key={index} className={styles.burgerMenu__searchResultsItem}>
+                <div className={styles.burgerMenu__searchResultsItemIcon}></div>
+                <div className={styles.burgerMenu__searchResultsItemText}>
+                  <h3 className={styles.burgerMenu__searchResultsItemName}>
+                    {el.name}
+                  </h3>
+                  <p className={styles.burgerMenu__searchResultsItemPrice}>
+                    11,
+                    <p
+                      className={
+                        styles.burgerMenu__searchResultsItemPriceDothSpan
+                      }
+                    >
+                      30 -
                     </p>
-                  </div>
-                  <div
-                    className={styles.burgerMenu__searchResultsItemCloseIcon}
-                  ></div>
+                    14,
+                    <p
+                      className={
+                        styles.burgerMenu__searchResultsItemPriceDothSpan
+                      }
+                    >
+                      24
+                    </p>
+                    ₽
+                    <span
+                      className={styles.burgerMenu__searchResultsItemPriceSpan}
+                    >
+                      / 100 шт
+                    </span>
+                  </p>
                 </div>
-              ))}
-            </div>
-          )}
+                <div
+                  className={styles.burgerMenu__searchResultsItemCloseIcon}
+                ></div>
+              </div>
+            ))}
+          </div>
         </form>
 
         <nav className={styles.burgerMenu__nav}>
@@ -272,23 +233,29 @@ export default function BurgerMenu({
                 <div className={styles.burgerMenu__itemWrapper}>
                   <p className={styles.burgerMenu__itemName}>ВКонтакте</p>
                   <div
-                    onClick={(event) => handleOpenListOptions(event, el)}
-                    className={
-                      isOpenListOptions.active === true &&
-                      isOpenListOptions.number === el.key
-                        ? styles.burgerMenu__itemArrowUp
-                        : styles.burgerMenu__itemArrowDown
-                    }
+                    onClick={(event) => handleOpenListOptions(el)}
+                    className={classNames({
+                      [styles.burgerMenu__itemArrowUp]:
+                        isOpenListOptions.active === true &&
+                        isOpenListOptions.number === el.key,
+                      [styles.burgerMenu__itemArrowDown]: !(
+                        isOpenListOptions.active === true &&
+                        isOpenListOptions.number === el.key
+                      ),
+                    })}
                   ></div>
                 </div>
               </div>
               <div
-                className={
-                  isOpenListOptions.active === true &&
-                  isOpenListOptions.number === el.key
-                    ? styles.burgerMenu__listOptionsOpened
-                    : styles.burgerMenu__listOptions
-                }
+                className={classNames({
+                  [styles.burgerMenu__listOptionsOpened]:
+                    isOpenListOptions.active === true &&
+                    isOpenListOptions.number === el.key,
+                  [styles.burgerMenu__listOptions]: !(
+                    isOpenListOptions.active === true &&
+                    isOpenListOptions.number === el.key
+                  ),
+                })}
               >
                 {itemsForSearch.map((el, index) => (
                   <div key={index} className={styles.burgerMenu__option}>

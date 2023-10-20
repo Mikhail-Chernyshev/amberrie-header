@@ -1,76 +1,46 @@
-import React, { useState } from 'react';
-import styles from '../popupSmall.module.css';
+import React from 'react';
+import styles from '../popupSmall.module.scss';
 import PopupSecondLevel from './popupSecondLevel';
-import { MouseEvent } from 'react';
-import Head from 'next/head';
-type Item = {
+import classNames from 'classnames';
+type elementItem = {
   name: string;
   key: number;
 };
-interface ElementProps {
-  key: number;
-  name: string;
-}
+
 export default function PopupSmall({
   items,
   withArrow,
-  screenWidth,
   thirdLevel,
 }: {
-  items: Item[];
+  items: elementItem[];
   withArrow: boolean;
-  screenWidth: number;
   thirdLevel: boolean;
 }) {
-  const [hovered, setHovered] = useState({ active: false, number: 0 });
-  const handleMouseEnter = (
-    event: MouseEvent<HTMLDivElement>,
-    elementProps: ElementProps
-  ) => {
-    const { key, name } = elementProps;
-    setHovered({ active: true, number: key });
-  };
-  const handleMouseLeave = () => {
-    setHovered({ active: false, number: 0 });
-  };
-
-  console.log(thirdLevel);
   return (
     <>
-      <Head>
-        <link rel='stylesheet' href='/amberrie-test/src/app/globals.css' />
-      </Head>
       <div
-        className={
-          withArrow === true && thirdLevel !== true
-            ? styles.popupSmallContainerArrowFull
-            : screenWidth < 1023
-            ? styles.popupSmallContainerTable
-            : thirdLevel === true
-            ? styles.popupSmallContainerThirdLevel
-            : styles.popupSmallContainer
-        }
+        className={classNames({
+          [styles.popupSmallContainerArrowFull]: withArrow && !thirdLevel,
+          [styles.popupSmallContainerThirdLevel]: thirdLevel,
+          [styles.popupSmallContainer]: !withArrow && !thirdLevel,
+        })}
       >
         {items.map((element, index) => (
           <div
-            onMouseEnter={(event) => handleMouseEnter(event, element)}
-            onMouseLeave={handleMouseLeave}
             key={index}
-            className={
-              withArrow
-                ? styles.popupSmall__item_arrow
-                : styles.popupSmall__item
-            }
+            className={classNames({
+              [styles.popupSmall__item_arrow]: withArrow,
+              [styles.popupSmall__item]: !withArrow,
+            })}
           >
             <p className={styles.popupSmall__itemName}>{element.name}</p>
-            {withArrow === true && (
+            {withArrow && (
               <div className={styles.popupSmall__itemArrow}>
-                {hovered.active === true && hovered.number === element.key && (
+                <div className={styles.popupSmall__popupSecondLevelContainer}>
                   <PopupSecondLevel
-                    screenWidth={screenWidth}
                     secondLevel={true}
                   />
-                )}
+                </div>
               </div>
             )}
           </div>
