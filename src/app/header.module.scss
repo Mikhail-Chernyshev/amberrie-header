@@ -825,6 +825,7 @@ $background-color_7: rgba(255, 255, 255, 0.01);
       margin-left: 15px;
     }
   }
+
   .header__inputIconClear {
     width: 15px;
     height: 15px;
@@ -839,6 +840,9 @@ $background-color_7: rgba(255, 255, 255, 0.01);
   }
 }
 @media screen and (max-width: 800px) {
+  .header__wrapperButton {
+    display: none;
+  }
   .header__buttonHide {
     visibility: hidden;
   }
@@ -846,10 +850,10 @@ $background-color_7: rgba(255, 255, 255, 0.01);
     display: none;
   }
   .main {
-    width: 400px;
+    width: 390px;
   }
   .header {
-    width: 400px;
+    width: 390px;
   }
   .header__icons {
     display: none;
@@ -875,24 +879,25 @@ $background-color_7: rgba(255, 255, 255, 0.01);
   }
   .header__searchIconActive {
     margin-top: 1.5px;
-    margin-left: -2px;
-    margin-right: 7px;
+    margin-left: -5px;
+    margin-right: 6px;
     width: 38px;
     height: 36px;
     background-image: url('../../public/headerSearchIconMobileActive.svg');
     background-repeat: no-repeat;
     background-position: -13px -11px;
     border-radius: 10px;
+    box-shadow: 4px 6px 18px 0px #4b3d4533;
   }
   .header__notifications {
-    width: 174px;
-    gap: 11px;
+    width: 164px;
+    gap: 8px;
     margin-right: 22px;
     margin-left: 19px;
   }
   .header__searchContainer {
     height: 44px;
-    width: 400px;
+    width: 390px;
     padding-top: 18px;
     margin-bottom: 18px;
   }
@@ -934,10 +939,10 @@ $background-color_7: rgba(255, 255, 255, 0.01);
     display: none;
   }
   .header__iconsFirstLineMobile {
-    width: 359px;
+    width: 349px;
     padding: 0 20.5px;
     height: 62px;
-    gap: 19px;
+    gap: 17px;
     display: flex;
   }
   .header__social {
@@ -945,7 +950,7 @@ $background-color_7: rgba(255, 255, 255, 0.01);
     height: 62px;
   }
   .header__main {
-    width: 400px;
+    width: 390px;
     margin-top: 10px;
     padding: 0;
     height: auto;
@@ -954,14 +959,14 @@ $background-color_7: rgba(255, 255, 255, 0.01);
     background-image: url('../../public/mainHeaderBgMobile.png');
   }
   .header__content {
-    width: 356px;
+    width: 346px;
     padding: 0 22px;
     background-color: $background-color_1;
     padding-bottom: 2px;
     margin-left: 0;
   }
   .header__title {
-    width: 356px;
+    width: 346px;
     height: 60px;
     font-size: 26px;
     font-weight: 700;
@@ -973,7 +978,7 @@ $background-color_7: rgba(255, 255, 255, 0.01);
   .header__subtitleContainer {
     margin-left: 0;
     height: 98px;
-    width: 356px;
+    width: 346px;
     display: none;
   }
   .header__subtitleContainerMobile {
@@ -987,7 +992,7 @@ $background-color_7: rgba(255, 255, 255, 0.01);
     letter-spacing: 0em;
     text-align: left;
     height: auto;
-    width: 356px;
+    width: 346px;
     &:last-child {
       margin-bottom: 37px;
     }
@@ -996,7 +1001,7 @@ $background-color_7: rgba(255, 255, 255, 0.01);
     margin: 0;
     margin-top: 35px;
     background-image: url('../../public/mainImageMobile.svg');
-    width: 356px;
+    width: 357px;
     height: 251px;
     margin-bottom: 64px;
   }
@@ -1026,12 +1031,15 @@ $background-color_7: rgba(255, 255, 255, 0.01);
   .header__iconsButtonActiveMobile {
     margin-right: 0;
   }
+  .header__image {
+    margin-top: 0;
+  }
   .header__iconsSecondLineTable {
     margin-top: 12px;
     display: flex;
-    padding: 0 21px;
-    width: 359px;
-    gap: 19px;
+    padding: 0 20.5px;
+    width: 349px;
+    gap: 17px;
     row-gap: 12px;
     flex-wrap: wrap;
   }
@@ -1047,7 +1055,7 @@ $background-color_7: rgba(255, 255, 255, 0.01);
     margin-top: 30px;
   }
   .header__searchActive {
-    width: 356px;
+    width: 346px;
     margin: 0 auto;
     > .header__searchIconMobile {
       width: 34px;
@@ -1065,7 +1073,7 @@ $background-color_7: rgba(255, 255, 255, 0.01);
     width: 261.5px;
   }
   .header__searchOverlayMobile {
-    width: 400px;
+    width: 390px;
     height: 100%;
     position: absolute;
     top: 120px;
@@ -1078,11 +1086,65 @@ $background-color_7: rgba(255, 255, 255, 0.01);
   .header__searchIconMobile {
     display: flex;
     margin-top: 0;
-    margin-left: 7px;
+    margin-left: 3px;
     padding-top: 4px;
     margin-right: 0;
     width: 36px;
     height: 36px;
     background-position: left;
+  }
+}
+@media screen and (max-width: 389px) {
+  .main {
+    width: 360px;
+  }
+  .header {
+    width: 360px;
+  }
+  .header__searchContainer {
+    width: 360px;
+  }
+  .header__main {
+    width: 360px;
+  }
+  .header__searchOverlayMobile {
+    width: 360px;
+  }
+  .header__logo {
+    width: 90px;
+    height: 32px;
+    background-image: url('../../public/Amberrie\ Logos360.svg');
+    margin-top: 5px;
+  }
+  .header__iconsFirstLineMobile {
+    width: 319px;
+    gap: 11px;
+  }
+  .header__iconsSecondLineTable {
+    width: 319px;
+    gap: 11px;
+  }
+  .header__content {
+    width: 316px;
+  }
+  .header__title {
+    width: 316px;
+  }
+  .header__subtitleContainer {
+    width: 316px;
+  }
+  .header__subtitle {
+    width: 316px;
+  }
+
+  .header__searchActive {
+    width: 316px;
+  }
+  .header__searchIcon {
+    display: none;
+  }
+  .header__searchActive > .header__input {
+    margin-left: 15px;
+    width: 188px;
   }
 }

@@ -3,7 +3,7 @@
   margin: 0 auto;
   position: absolute;
   top: 0;
-  left: -56px;
+  left: 0;
   right: 0;
   visibility: hidden;
   opacity: 0;
@@ -16,7 +16,8 @@
   margin: 0 auto;
   position: absolute;
   top: 0;
-  left: -56px;
+  width: 390px;
+  left: 0;
   right: 0;
   visibility: hidden;
   opacity: 0;
@@ -27,21 +28,21 @@
   opacity: 1;
 }
 .burgerMenu__content {
-  margin: 0 auto;
+  margin: 0 auto 0 0;
   /* padding: 22px; */
   display: flex;
   flex-direction: column;
   position: relative;
   padding: 0;
   background-color: #ffffff;
-  width: 344px;
+  width: 340px;
   z-index: 12;
   height: auto;
 }
 .burgerMenu__header {
   display: flex;
-  width: 300px;
-  margin: 18px auto 19px;
+  width: 296px;
+  margin: 18px auto 32px;
   justify-content: space-between;
 }
 .burgerMenu__close {
@@ -59,7 +60,7 @@
   border-radius: 16px;
   display: inline-block;
   position: absolute;
-  top: -50px;
+  top: -63px;
   left: 140px;
   color: rgba(255, 92, 0, 1);
   background-color: #ffffff;
@@ -73,7 +74,7 @@
 }
 
 .burgerMenu__search {
-  width: 300px;
+  width: 296px;
   border-radius: 22px;
   display: flex;
   margin: 0 auto 19px;
@@ -137,9 +138,15 @@
   visibility: visible;
   z-index: 100;
 }
+.burgerMenu__search:focus-within > .burgerMenu__searchResultsItemClose {
+  visibility: visible;
+}
+.burgerMenu__search:focus-within + .burgerMenu__nav {
+  display: none;
+}
 .burgerMenu__nav {
   height: 53px;
-  width: 300px;
+  width: 296px;
   margin: 0 auto 27px;
   display: flex;
   flex-direction: column;
@@ -166,7 +173,7 @@
   margin: 0;
 }
 .burgerMenu__items {
-  width: 300px;
+  width: 296px;
   margin: 0 auto 21px;
   display: flex;
   flex-direction: column;
@@ -182,7 +189,7 @@
   height: auto;
 }
 .burgerMenu__item {
-  width: 300px;
+  width: 296px;
   height: 44px;
   display: flex;
 }
@@ -226,7 +233,7 @@
   align-self: center;
 }
 .burgerMenu__listOptions {
-  width: 331px;
+  width: 318px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -235,7 +242,7 @@
   display: none;
 }
 .burgerMenu__listOptionsOpened {
-  width: 331px;
+  width: 318px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -245,7 +252,7 @@
   margin-left: 25px;
 }
 .burgerMenu__option {
-  width: 331px;
+  width: 318px;
   height: auto;
   display: flex;
   background-color: #ffffff;
@@ -265,7 +272,7 @@
 .burgerMenu__optionText {
   display: flex;
   flex-direction: column;
-  width: 251px;
+  width: 241px;
   height: 41px;
   margin: 4px 4px 4px 0;
 }
@@ -318,7 +325,7 @@
 .burgerMenu__searchResultsItem {
   box-shadow: 4px 6px 18px 0px #4b3d4533;
   padding: 5px 11.5px 3px 13px;
-  width: 261.5px;
+  width: 257.5px;
   margin-bottom: 12px;
   border-radius: 38px;
   background-color: #ffffff;
@@ -397,14 +404,60 @@
   margin: 0;
 }
 .burgerMenu__itemsSearchWrapper {
-  width: 284px;
+  width: 282px;
   padding: 0 36px 40px 22px;
   height: auto;
   position: absolute;
-  top: 130px;
-  left: -21px;
+  top: 60px;
+  left: -22px;
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(5px);
   z-index: 100;
   visibility: hidden;
+}
+@media screen and (max-width: 389px) {
+  .burgerMenu__content {
+    width: 320px;
+  }
+  .burgerMenu__search {
+    width: 276px;
+  }
+  .burgerMenu__input {
+    width: 103px;
+  }
+  .burgerMenu__cancelSearch {
+    left: 120px;
+  }
+  .burgerMenu__header {
+    display: flex;
+    width: 276px;
+  }
+  .burgerMenu__nav {
+    height: 53px;
+    width: 276px;
+  }
+  .burgerMenu__items {
+    width: 276px;
+  }
+  .burgerMenu__item {
+    width: 276px;
+  }
+  .burgerMenu__listOptions {
+    width: 298px;
+  }
+  .burgerMenu__listOptionsOpened {
+    width: 298px;
+  }
+  .burgerMenu__option {
+    width: 298px;
+  }
+  .burgerMenu__optionText {
+    width: 221px;
+  }
+  .burgerMenu__itemsSearchWrapper {
+    width: 262px;
+  }
+  .burgerMenu__searchResultsItem {
+    width: 251.5px;
+  }
 }
