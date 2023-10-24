@@ -1148,3 +1148,90 @@ $background-color_7: rgba(255, 255, 255, 0.01);
     width: 188px;
   }
 }
+@media screen and (max-width: 359px) {
+  .main {
+    width: 320px;
+  }
+  .header {
+    width: 320px;
+  }
+  .header__searchContainer {
+    width: 320px;
+  }
+  .header__main {
+    width: 320px;
+  }
+  .header__searchOverlayMobile {
+    width: 320px;
+  }
+  .header__logo {
+    width: 90px;
+    height: 32px;
+    background-image: url('../../public/Amberrie\ Logos360.svg');
+    margin-top: 5px;
+  }
+  .header__iconsFirstLineMobile {
+    width: 319px;
+    gap: 11px;
+  }
+  .header__iconsSecondLineTable {
+    width: 319px;
+    gap: 11px;
+  }
+  .header__content {
+    width: 316px;
+    padding: 0 10px;
+  }
+  .header__title {
+    width: 316px;
+  }
+  .header__subtitleContainer {
+    width: 316px;
+  }
+  .header__subtitle {
+    width: 316px;
+  }
+
+  .header__searchActive {
+    width: 316px;
+  }
+  .header__searchIcon {
+    display: none;
+  }
+  .header__searchActive > .header__input {
+    margin-left: 15px;
+    width: 188px;
+  }
+  .header__burgerButton {
+    margin-left: 10px;
+    margin-right: 17px;
+  }
+  .header__notifications {
+    margin-right: 10px;
+    width: 154px;
+    gap: 5px;
+  }
+  .header__iconsFirstLineMobile {
+    padding: 0 10px;
+    gap: 6.6px;
+    width: 300px;
+  }
+  .header__iconsSecondLineTable {
+    padding: 0 10px;
+    gap: 6.6px;
+    width: 300px;
+  }
+  .header__image {
+    width: 320px;
+    background-size: contain;
+  }
+  .header__promoContainerMobile {
+    width: 314px;
+  }
+  .header__searchActive {
+    width: 300px;
+  }
+  .header__searchResultsItem {
+    width: 255.5px;
+  }
+}

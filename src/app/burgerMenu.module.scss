@@ -425,6 +425,9 @@
   .burgerMenu__input {
     width: 103px;
   }
+  // .burgerMenu__input:focus + .burgerMenu__searchIcon {
+  //   display: none;
+  // }
   .burgerMenu__cancelSearch {
     left: 120px;
   }
@@ -459,5 +462,51 @@
   }
   .burgerMenu__searchResultsItem {
     width: 251.5px;
+  }
+}
+@media screen and (max-width: 359px) {
+  .burgerMenu__header {
+    width: 280px;
+  }
+  .burgerMenu__wrapperOpened {
+    width: 360px;
+  }
+  .burgerMenu__content {
+    width: 300px;
+  }
+  .burgerMenu__search {
+    width: 280px;
+  }
+  .burgerMenu__input {
+    width: 108px;
+  }
+  .burgerMenu__nav {
+    width: 280px;
+  }
+  .burgerMenu__item {
+    width: 280px;
+  }
+  .burgerMenu__itemWrapper {
+    margin-right: 16px;
+  }
+  .burgerMenu__listOptions {
+    width: 287px;
+    margin-left: 13px;
+  }
+  .burgerMenu__listOptionsOpened {
+    width: 287px;
+    margin-left: 13px;
+  }
+  .burgerMenu__option {
+    width: 287px;
+  }
+  .burgerMenu__optionText {
+    width: 208px;
+  }
+  .burgerMenu__itemsSearchWrapper {
+    width: 253px;
+  }
+  .burgerMenu__searchResultsItem {
+    width: 255.5px;
   }
 }
